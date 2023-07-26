@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/bmiCalculateFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.leaf3stones.tracker.register.DetailBodyInfoFragment"
+        android:label="bodyInfo" />
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.leaf3stones.tracker.mainpage.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculateFragment"
+        android:name="com.leaf3stones.tracker.mainpage.CalculateFragment"
+        android:label="CalculateFragment" />
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.leaf3stones.tracker.mainpage.ArticleDetailFragment"
+        android:label="fragment_article_detail"
+        tools:layout="@layout/fragment_article_detail" >
+        <action
+            android:id="@+id/action_articleDetailFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiCalculateFragment"
+        android:name="com.leaf3stones.tracker.mainpage.BmiCalculateFragment"
+        android:label="fragment_bmi_calculate"
+        tools:layout="@layout/fragment_bmi_calculate" >
+        <action
+            android:id="@+id/action_bmiCalculateFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
